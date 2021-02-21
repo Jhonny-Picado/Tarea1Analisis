@@ -36,25 +36,33 @@ public class Algoritmos {
     {
         
         //Declaro e inicializo el arreglo a utilizar con numeros aleatorios
-        int arr[] = new int[10000];
-        for(int i=0; i<10000; i++){
+        int arr[] = new int[100000];
+        for(int i=0; i<100000; i++){
             arr[i]=(int)(Math.random()*1000000+1);
         }
-
-        //MergeSort
-        //Merge(arr);
         
+        int arr2[]= new int[100000];
+        System.arraycopy(arr, 0, arr2, 0, 100000);
+        
+        int arr3[]= new int[100000];
+        System.arraycopy(arr, 0, arr3, 0, 100000);
+        
+        //MergeSort
+        Merge(arr);
+
         //BubbleSort
-        //Bubble(arr);
+        Bubble(arr2);
         
         //QuickSort
-        Quick(arr);
+        Quick(arr3);
     }
     
     //BubbleSort
     public static void Bubble(int []arr){
+        
+        System.out.println("\n\nBubble Sort\n");
         BubbleSort bubbleSort = new BubbleSort();
-	System.out.println("Arreglo sin orddenar");
+	System.out.println("Arreglo sin ordenar");
         printArray(arr);
         
         CapturarHora();
@@ -68,9 +76,10 @@ public class Algoritmos {
     //Merge Sort
     public static void Merge(int []arr){
         
+        System.out.println("\n\nMerge Sort\n");
         MergeSort merge = new MergeSort();
         
-        System.out.println("Arreglo sin orddenar");
+        System.out.println("Arreglo sin ordenar");
         printArray(arr);
         
         CapturarHora();
@@ -83,7 +92,7 @@ public class Algoritmos {
     
     //QuickSort
     public static void Quick(int []arr){
-        
+        System.out.println("\n\nQuick Sort\n");
         QuickSort quick = new QuickSort();
         
         System.out.println("Arreglo sin orddenar");
